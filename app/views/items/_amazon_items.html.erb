@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="container-inner inner-default clearfix">
+    <% amazon_items.each do |item| %>
+      <div class="item-box">
+        <div class="image">
+          <div class="img-wrap">
+            <% #TODO 商品画像 %>
+            <%= image_tag("no-image.png" , alt: item.get('ItemAttributes/Title')) %>
+          </div>
+        </div>
+        <div class="detail">
+          <p class="title">
+            <% #TODO 商品タイトル %>
+            仮タイトル
+          </p>
+        </div>
+        <div class="action clearfix">
+          <%= link_to "" , ownerships_path(asin: item.get('ASIN') , type: "Want") ,
+                      :class => "want-#{item.get('ASIN')} btn-want btn btn-danger btn-sm want",
+                      :remote => true,
+                      :method => :post %>
+          <%= link_to "" , ownerships_path(asin: item.get('ASIN') , type: "Have") ,
+                      :class => "have-#{item.get('ASIN')} btn-have btn btn-warning btn-sm have",
+                      :remote => true,
+                      :method => :post %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

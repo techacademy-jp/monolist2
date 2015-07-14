@@ -1,0 +1,38 @@
+<div class="user-profile">
+  <div class="icon">
+    <%= gravatar_for user, size: 100 %>
+  </div>
+  <div class="name">
+    <h1><%= user.name %><h1>
+  </div>
+  <div class="status">
+    <ul>
+      <li>
+        <div class="status-label">FOLLOWING</div>
+        <div class="status-value">
+          <%= user.following_users.count %>
+        </div>
+      </li>
+      <li>
+        <div class="status-label">FOLLOWERS</div>
+        <div id="followers" class="status-value">
+          <%= user.followed_users.count %>
+        </div>
+      </li>
+      <li>
+        <div class="status-label">WANT</div>
+        <div id="want_count" class="status-value">
+          789
+        </div>
+      </li>
+      <li>
+        <div class="status-label">HAVE</div>
+        <div id="have_count" class="status-value">
+          123
+        </div>
+      </li>
+    </ul>
+
+    <%= render 'follow_form' if logged_in? && @user != current_user %>
+  </div>
+</div>

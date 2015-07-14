@@ -1,0 +1,8 @@
+<%= form_for(current_user.following_relationships.find_by(followed_id: @user.id),
+             html: { method: :delete },
+             remote: true) do |f| %>
+  <button type class="btn btn-info btn-round">
+      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+      Following
+    </button>
+<% end %>
