@@ -1,8 +1,8 @@
 class CreateOwnerships < ActiveRecord::Migration
   def change
     create_table :ownerships do |t|
-      t.references :user, index: true, foreign_key: true
-      t.references :item, index: true, foreign_key: true
+      t.references :user, index: true
+      t.references :item, index: true
       t.string :type
 
       t.timestamps null: false
