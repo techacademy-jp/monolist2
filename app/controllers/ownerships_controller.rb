@@ -22,13 +22,19 @@ class OwnershipsController < ApplicationController
       @item.save!
     end
 
-    # ユーザにwant or haveを設定する
+    # TODO ユーザにwant or haveを設定する
+    # params[:type]の値ににHaveボタンが押された時にはの時は「Have」,
+    # Wantボタンがされた時には「Want」が設定されています。
+    
+
   end
 
   def destroy
     @item = Item.find(params[:item_id])
 
-    # TODO 紐付けの解除
+    # TODO 紐付けの解除。 
+    # params[:type]の値ににHavedボタンが押された時にはの時は「Have」,
+    # Wantedボタンがされた時には「Want」が設定されています。
 
   end
 end
