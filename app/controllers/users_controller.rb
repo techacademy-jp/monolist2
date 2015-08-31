@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
   
   def show
-    @items = @user.items
+    @items = @user.items.group(:item_id)
   end
 
   private
