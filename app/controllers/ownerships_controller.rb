@@ -38,8 +38,8 @@ class OwnershipsController < ApplicationController
     @item = Item.find(params[:item_id])
 
     # TODO 紐付けの解除。 
-    # params[:type]の値ににHavedボタンが押された時には「Have」,
-    # Wantedボタンがされた時には「Want」が設定されています。
+    # params[:type]の値ににHave itボタンが押された時には「Have」,
+    # Want itボタンがされた時には「Want」が設定されています。
 
   end
 end
