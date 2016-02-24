@@ -119,18 +119,18 @@
       content: "Have";
     }
   }
-  .wanted {
+  .want_it {
     background-color: #5cb85c;
     border-color: darken(#5cb85c, 5%);
     &:before {
-      content: "Wanted";
+      content: "Want it";
     }
   }
-  .haved {
+  .have_it {
     background-color: #5cb85c;
     border-color: darken(#5cb85c, 5%);
     &:before {
-      content: "Haved";
+      content: "Have it";
     }
   }
 }

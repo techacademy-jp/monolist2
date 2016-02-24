@@ -28,8 +28,8 @@ class OwnershipsController < ApplicationController
     end
 
     # TODO ユーザにwant or haveを設定する
-    # params[:type]の値ににHaveボタンが押された時には「Have」,
-    # Wantボタンがされた時には「Want」が設定されています。
+    # params[:type]の値にHaveボタンが押された時には「Have」,
+    # Wantボタンが押された時には「Want」が設定されています。
     
 
   end
@@ -38,8 +38,8 @@ class OwnershipsController < ApplicationController
     @item = Item.find(params[:item_id])
 
     # TODO 紐付けの解除。 
-    # params[:type]の値ににHavedボタンが押された時には「Have」,
-    # Wantedボタンがされた時には「Want」が設定されています。
+    # params[:type]の値にHave itボタンが押された時には「Have」,
+    # Want itボタンが押された時には「Want」が設定されています。
 
   end
 end
