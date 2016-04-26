@@ -17,7 +17,7 @@ class OwnershipsController < ApplicationController
       @item.title           = item['itemName']
       @item.small_image     = item['smallImageUrls'].first['imageUrl']
       @item.medium_image    = item['mediumImageUrls'].first['imageUrl']
-      @item.large_image     = item['mediumImageUrls'].first['imageUrl'].delete('?_ex=128x128')
+      @item.large_image     = item['mediumImageUrls'].first['imageUrl'].slice(0..-13)
       @item.detail_page_url = item['itemUrl']
       @item.save!
     end
