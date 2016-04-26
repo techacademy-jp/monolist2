@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20160426042549) do
     t.string   "item_code"
   end
 
+  add_index "items", ["item_code"], name: "index_items_on_item_code", unique: true
+
   create_table "ownerships", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "item_id"

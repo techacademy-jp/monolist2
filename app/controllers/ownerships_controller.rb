@@ -2,28 +2,23 @@ class OwnershipsController < ApplicationController
   before_action :logged_in_user
 
   def create
-    if params[:asin]
-      @item = Item.find_or_initialize_by(asin: params[:asin])
+    if params[:item_code]
+      @item = Item.find_or_initialize_by(item_code: params[:item_code])
     else
       @item = Item.find(params[:item_id])
     end
 
-    # itemsテーブルに存在しない場合はAmazonのデータを登録する。
+    # itemsテーブルに存在しない場合は楽天のデータを登録する。
     if @item.new_record?
-      begin
-        # TODO 商品情報の取得 Amazon::Ecs.item_lookupを用いてください
-        response = {}
-      rescue Amazon::RequestError => e
-        return render :js => "alert('#{e.message}')"
-      end
+      # TODO 商品情報の取得 RakutenWebService::Ichiba::Item.search を用いてください
+      items = {}
 
-      amazon_item       = response.items.first
-      @item.title        = amazon_item.get('ItemAttributes/Title')
-      @item.small_image  = amazon_item.get("SmallImage/URL")
-      @item.medium_image = amazon_item.get("MediumImage/URL")
-      @item.large_image  = amazon_item.get("LargeImage/URL")
-      @item.detail_page_url = amazon_item.get("DetailPageURL")
-      @item.raw_info        = amazon_item.get_hash
+      item                  = items.first
+      @item.title           = item['itemName']
+      @item.small_image     = item['smallImageUrls'].first['imageUrl']
+      @item.medium_image    = item['mediumImageUrls'].first['imageUrl']
+      @item.large_image     = item['mediumImageUrls'].first['imageUrl'].delete('?_ex=128x128')
+      @item.detail_page_url = item['itemUrl']
       @item.save!
     end
 
