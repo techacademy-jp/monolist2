@@ -5,12 +5,12 @@
   <% end %>
 </div>
 <div class="search-result">
-  <% if @amazon_items.present? %>
+  <% if @items.present? %>
     <div class="alert alert-info">
       <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
       気になったアイテムが欲しければ「Want」持ってれば「Have」しましょう
     </div>
-    <%= render 'amazon_items' , amazon_items: @amazon_items %>
+    <%= render 'items' , items: @items %>
   <% elsif params[:q].present? %>
     <div class="alert alert-danger">
       <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>

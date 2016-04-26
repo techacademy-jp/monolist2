@@ -4,11 +4,12 @@ class ItemsController < ApplicationController
 
   def new
     if params[:q]
-      response = Amazon::Ecs.item_search(params[:q] , 
-                                  :search_index => 'All' , 
-                                  :response_group => 'Medium' , 
-                                  :country => 'jp')
-      @amazon_items = response.items
+      @items = RakutenWebService::Ichiba::Item.search(
+        keyword: params[:q],
+        imageFlag: 1,
+        page: 1,
+        hits: 10,
+      )
     end
   end
 
