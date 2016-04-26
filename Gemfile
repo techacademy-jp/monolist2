@@ -28,8 +28,6 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'bootstrap-sass'
-# https://github.com/jugend/amazon-ecs
-gem 'amazon-ecs'
 
 # http://webservice.rakuten.co.jp/sdk/ruby.html
 # https://github.com/rakuten-ws/rws-ruby-sdk
