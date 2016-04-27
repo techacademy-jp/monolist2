@@ -5,7 +5,7 @@ TechAcademyオンラインブートキャンプの教材ファイル。
 
 ## Demo
 
-https://mono-list.herokuapp.com/
+https://mono-list2.herokuapp.com/
 
 ## Licence
 
