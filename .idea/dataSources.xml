@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="107984821">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
     <data-source source="LOCAL" name="Rails monolist2: development" uuid="a4b7f38e-8e97-47f9-a0c3-b85ef37dc4c1">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
