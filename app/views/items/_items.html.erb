@@ -5,13 +5,16 @@
         <div class="image">
           <div class="img-wrap">
             <% #TODO 商品画像 %>
-            <%= image_tag("no-image.png" , alt: item['itemName']) %>
+            <% if item['mediumImageUrls'].first['imageUrl'].present? %>
+              <%= image_tag(item['mediumImageUrls'].first['imageUrl'].gsub('?_ex=128x128', '') , alt: item['itemName']) %>
+            <% else %>
+              <%= image_tag("no-image.png" , alt: item['itemName']) %>
+            <% end %>
           </div>
         </div>
         <div class="detail">
           <p class="title">
-            <% #TODO 商品タイトル %>
-            仮タイトル
+            <%= item['itemName'] %>
           </p>
         </div>
         <div class="action clearfix">
